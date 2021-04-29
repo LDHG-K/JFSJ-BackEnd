@@ -23,7 +23,7 @@ public class User {
     private Long userId;
 
     @Temporal(TemporalType.DATE)
-    @Column(name="user_cration_date")
+    @Column(name="user_creation_date")
     private Date userCrationDate;
 
     @Temporal(TemporalType.DATE)
