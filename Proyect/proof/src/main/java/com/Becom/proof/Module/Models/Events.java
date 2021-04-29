@@ -7,10 +7,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
-
+@Data
 @Builder
 @AllArgsConstructor
-@Data
 @Entity
 @Table(name="events")
 public class Events {
@@ -29,7 +28,7 @@ public class Events {
 
     @Temporal(TemporalType.DATE)
     @Column(name="event_description")
-    private Date eventDescription;
+    private String eventDescription;
 
     @Temporal(TemporalType.DATE)
     @Column(name="event_edit_date")
@@ -39,6 +38,10 @@ public class Events {
     private String eventName;
 
     //Fk
+
+    @Column(name="id_creator")
+    private Long userId;
+
 
     @ManyToOne
     @JoinColumn(name="id_creator")

@@ -20,5 +20,5 @@ public class EventsDTO {
     private String eventName;
 
     //Fk
-    private User user;
+    private Long userId;
 }
