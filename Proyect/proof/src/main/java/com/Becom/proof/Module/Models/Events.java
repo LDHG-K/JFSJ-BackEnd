@@ -8,11 +8,11 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Builder
-@AllArgsConstructor
-@Data
-@Entity
-@Table(name="events")
+//@Builder
+//@AllArgsConstructor
+//@Data
+//@Entity
+//@Table(name="events")
 public class Events {
 
 
