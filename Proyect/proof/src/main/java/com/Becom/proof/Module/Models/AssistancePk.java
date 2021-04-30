@@ -23,5 +23,5 @@ public class AssistancePk implements Serializable {
 
         @Basic(optional = false)
         @Column(name = "event_id", nullable = false,insertable = false,updatable = false)
-        private Long EventId;
+        private Long eventId;
 }

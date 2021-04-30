@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Assistance {
 
         @EmbeddedId
-        private AssistancePk aPK;
+        private AssistancePk assistancePk;
 
         @ManyToOne(optional = false )
         @JoinColumn(name = "user_id",referencedColumnName = "user_id", nullable = false,insertable = false,updatable = false)

@@ -10,15 +10,15 @@ public abstract  class AssistanceMapper {
 
     public AssistanceDTO assistantToAssistanceDTO(Assistance in){
         return AssistanceDTO.builder()
-                .idUsuario(in.getAPK().getUserId())
-                .idEvento(in.getAPK().getEventId())
+                .idUsuario(in.getAssistancePk().getUserId())
+                .idEvento(in.getAssistancePk().getEventId())
                 .build();
     }
 
     public Assistance assistanceDTOToAssistance(AssistanceDTO in){
         return Assistance.builder()
-                .aPK(AssistancePk.builder()
-                        .EventId(in.getIdEvento())
+                .assistancePk(AssistancePk.builder()
+                        .eventId(in.getIdEvento())
                         .userId(in.getIdUsuario())
                         .build())
                 .build();
