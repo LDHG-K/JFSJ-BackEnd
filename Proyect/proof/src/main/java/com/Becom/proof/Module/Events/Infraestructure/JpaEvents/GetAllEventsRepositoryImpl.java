@@ -27,6 +27,7 @@ public class GetAllEventsRepositoryImpl implements GetAllEventsRepository {
                 .eventDescription(listDTO.getEventDescription())
                 .eventCreationDate(listDTO.getEventCreationDate())
                 .eventEditDate(listDTO.getEventEditDate())
+                .userId(listDTO.getUserId())
                 .build())
                 .collect(Collectors.toList());
 

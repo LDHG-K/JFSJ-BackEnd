@@ -15,7 +15,7 @@ public class EventsDTO {
     private Long eventId;
     private Date eventCreationDate;
     private Date eventDate;
-    private Date eventDescription;
+    private String eventDescription;
     private Date eventEditDate;
     private String eventName;
 

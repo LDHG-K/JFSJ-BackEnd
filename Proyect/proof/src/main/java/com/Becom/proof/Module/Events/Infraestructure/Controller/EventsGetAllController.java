@@ -22,8 +22,9 @@ public class EventsGetAllController {
     public ResponseEntity<HttpStatus> getAllEvents(){
 
         List<EventsDTO> temp = gae.getEvents();
+
         if (temp.isEmpty()){
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
+            return new ResponseEntity(temp, HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity(temp, HttpStatus.ACCEPTED);
     }

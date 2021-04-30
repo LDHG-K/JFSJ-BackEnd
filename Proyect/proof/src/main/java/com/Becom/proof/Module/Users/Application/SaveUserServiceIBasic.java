@@ -22,6 +22,10 @@ public class SaveUserServiceIBasic implements SaveUserService {
     @Override
     public UserDTOResponseOut saveUser(UserDTOResponseIn in) {
 
+        if (in.getName().equals(null) || in.getName().equals("")){
+            return null;
+        }
+
         UserDTO save = UserDTO.builder()
                 .userId(in.getId())
                 .userName(in.getName())
@@ -29,7 +33,7 @@ public class SaveUserServiceIBasic implements SaveUserService {
                 .userEditDate(new Date())
                 .build();
         Optional<User> temp = sus.saveUser(save);
-        System.out.println(temp.get().getUserId());
+
         if (temp.get().getUserName().equals(in.getName())){
             return UserDTOResponseOut.builder()
                     .id(temp.get().getUserId())

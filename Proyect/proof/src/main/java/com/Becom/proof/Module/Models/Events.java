@@ -4,17 +4,20 @@ package com.Becom.proof.Module.Models;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="events")
 public class Events {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="event_id")
     private Long eventId;
 
@@ -26,7 +29,7 @@ public class Events {
     @Column(name="event_date")
     private Date eventDate;
 
-    @Temporal(TemporalType.DATE)
+
     @Column(name="event_description")
     private String eventDescription;
 
@@ -44,7 +47,7 @@ public class Events {
 
 
     @ManyToOne
-    @JoinColumn(name="id_creator")
+    @JoinColumn(name="id_creator", updatable = false,insertable = false)
     private User user;
 
 

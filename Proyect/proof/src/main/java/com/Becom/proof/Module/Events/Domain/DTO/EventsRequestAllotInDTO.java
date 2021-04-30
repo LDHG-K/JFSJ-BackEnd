@@ -1,16 +1,17 @@
 package com.Becom.proof.Module.Events.Domain.DTO;
 
-import lombok.Builder;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.Date;
-@Builder
-@Getter
-public class EventsRequestUpdateOutDTO {
 
-    private long id;
-    private Date fecha;
+@Getter
+public class EventsRequestAllotInDTO {
+
     private String nombre;
+    private Date fecha;
     private String descripcion;
 
 }
+

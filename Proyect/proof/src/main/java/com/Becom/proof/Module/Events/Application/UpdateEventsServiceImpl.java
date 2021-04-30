@@ -10,6 +10,8 @@ import com.Becom.proof.Module.Models.Events;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @AllArgsConstructor
 @Service
 public class UpdateEventsServiceImpl implements UpdateEventsService {
@@ -36,6 +38,8 @@ public class UpdateEventsServiceImpl implements UpdateEventsService {
         if (in.getDescripcion()!=null) {
             mirror.setEventDescription(in.getDescripcion());
         }
+        mirror.setEventEditDate(new Date());
+
         uer.updateEvents(mirror);
 
         EventsRequestUpdateOutDTO res = EventsRequestUpdateOutDTO.builder()
